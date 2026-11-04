@@ -1155,8 +1155,7 @@ h1 em{
 }
 
 .float-btn {
-  width: 58px;
-  height: 58px;
+  width: 46px; height: 46px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1182,9 +1181,7 @@ h1 em{
   box-shadow: 0 12px 32px rgba(37, 211, 102, 0.7), 0 0 28px rgba(37, 211, 102, 0.55);
 }
 
-.float-btn-whatsapp svg {
-  width: 34px;
-  height: 34px;
+.float-btn-whatsapp svg { width: 26px; height: 26px;
   fill: #ffffff;
 }
 
@@ -1199,9 +1196,7 @@ h1 em{
   box-shadow: 0 12px 32px rgba(214, 36, 159, 0.65), 0 0 26px rgba(253, 89, 73, 0.5);
 }
 
-.float-btn-instagram svg {
-  width: 30px;
-  height: 30px;
+.float-btn-instagram svg { width: 23px; height: 23px;
   fill: #ffffff;
 }
 
