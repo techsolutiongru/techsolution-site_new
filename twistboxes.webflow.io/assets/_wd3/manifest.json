@@ -1,0 +1,535 @@
+{
+ "entryUrl": "https://twistboxes.webflow.io/",
+ "capturedAt": "2026-10-31T03:55:51+00:00",
+ "indexHtml": {
+  "kind": "arquivo",
+  "description": "site vivo aberto com duplo clique (file://): um runtime faz o papel do Service Worker; imagens e vídeos que a página só exibe são lidos de assets/, o resto (CSS, JS, fontes, dados, imagens de WebGL) vai embutido no index.html"
+ },
+ "files": [
+  {
+   "url": "https://twistboxes.webflow.io/",
+   "file": "assets/twistboxes.webflow.io/index.html",
+   "type": "text/html",
+   "resourceType": "document",
+   "size": 42813,
+   "status": 200,
+   "party": "first",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e4f_Group.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e4f_Group.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 1125,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e56_logo-github%201.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e56_logo-github 1.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 1380,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e64_logo-fb-simple%202.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e64_logo-fb-simple 2.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 414,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e6c_logo-instagram%201.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e6c_logo-instagram 1.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 3737,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e87_Satoshi-Light.woff2",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e87_Satoshi-Light.woff2",
+   "type": "application/octet-stream",
+   "resourceType": "font",
+   "size": 22800,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e89_Satoshi-Medium.woff2",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e89_Satoshi-Medium.woff2",
+   "type": "application/octet-stream",
+   "resourceType": "font",
+   "size": 25596,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e8c_Satoshi-Bold.woff2",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e8c_Satoshi-Bold.woff2",
+   "type": "application/octet-stream",
+   "resourceType": "font",
+   "size": 25328,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e91_Satoshi-Regular.woff2",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e91_Satoshi-Regular.woff2",
+   "type": "application/octet-stream",
+   "resourceType": "font",
+   "size": 25516,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e93_Arrow.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e93_Arrow.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 193,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58eb8_Diagonal%20Arrow.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58eb8_Diagonal Arrow.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 294,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58eba_Favicon.jpg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58eba_Favicon.jpg",
+   "type": "image/jpeg",
+   "resourceType": "other",
+   "size": 1331,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58ebb_Webclip.jpg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58ebb_Webclip.jpg",
+   "type": "image/jpeg",
+   "resourceType": "other",
+   "size": 10370,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2ad4c4fbe0c9d1bf75342_Twistboxes_Logo_Black.svg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2ad4c4fbe0c9d1bf75342_Twistboxes_Logo_Black.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 2866,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2c4f35026cf1bd5473ae2_Namnl%C3%B6s%20design%20(61).avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2c4f35026cf1bd5473ae2_Namnlös design (61).avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 114104,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2c7261261e59d26515690_Namnl%C3%B6s%20design%20-%202025-03-13T125238.432.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2c7261261e59d26515690_Namnlös design - 2025-03-13T125238.432.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 1827,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2c826452e134601a7bfd5_Namnl%C3%B6s%20design%20(64).avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2c826452e134601a7bfd5_Namnlös design (64).avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 149666,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2df4cfc12460c06a92e91_200cm.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2df4cfc12460c06a92e91_200cm.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 4365,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2e2be8608fe5ace9c20f8_200cm%20(3).avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2e2be8608fe5ace9c20f8_200cm (3).avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 11738,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2e8afdabb09e731a2d51d_Waterproof%20%26%20UV-protected%20fabric.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2e8afdabb09e731a2d51d_Waterproof & UV-protected fabric.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 7857,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba%2F67d2f3e38447cb65cf51f546_your%20nest%20adventure%20starts%20with%20us-poster-00001.jpg",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2f3e38447cb65cf51f546_your nest adventure starts wit_601259e1.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 166193,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba%2F67d2f3e38447cb65cf51f546_your%20nest%20adventure%20starts%20with%20us-transcode.mp4",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2f3e38447cb65cf51f546_your nest adventure starts with us-transcode.mp4",
+   "type": "video/mp4",
+   "resourceType": "media",
+   "size": 4018281,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe4078bcf93bb536e08b9_Kl%C3%A4ttra.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe4078bcf93bb536e08b9_Klättra.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 52955,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe407ed9d39063bc47b8b_Segla.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe407ed9d39063bc47b8b_Segla.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 118048,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe4087bb4a2d66186bd25_Berg%202.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe4087bb4a2d66186bd25_Berg 2.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 110566,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe40940281a22855ef5e2_Kajak.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe40940281a22855ef5e2_Kajak.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 231985,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe40950790698e303b449_Luftballong.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dbe40950790698e303b449_Luftballong.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 329984,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc0dd7174623e6083f424f_Steg1-2048x2048.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc0dd7174623e6083f424f_Steg1-2048x2048.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 20023,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc0dd77a5d7450fd6091c5_Steg3-2048x2048.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc0dd77a5d7450fd6091c5_Steg3-2048x2048.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 15863,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc0dd8ab121d41a49f05d3_Steg2-2048x2048.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc0dd8ab121d41a49f05d3_Steg2-2048x2048.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 14403,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad33813d314747352ef_Storre-scaled-q19tytj713fjafk105lt8nug201zwgru1wmq3noj84.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad33813d314747352ef_Storre-scaled-q19tytj713fjafk105lt8nug201zwgru1wmq3noj84.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 111578,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad374b6742e720d25b1_Volvo-q3jy4slw7p3aj1p8f50xky4f7tou9fmu1rup6src5w.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad374b6742e720d25b1_Volvo-q3jy4slw7p3aj1p8f50xky4f7tou9fmu1rup6src5w.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 17519,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad3cd3e4331c4b335b2_bedroom-twistboxes-q19u1dndmuxmw7u829f910lm9rfyusxj2kkb4rvyac.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad3cd3e4331c4b335b2_bedroom-twistboxes-q19u1dndmuxmw7u829f910lm9rfyusxj2kkb4rvyac.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 53773,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad4744096c58d9510e7_Mercedes-q3jy3cwrrt4ishsbt0og9t62jmrni2xlinyzskvzo4.avif",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67dc1ad4744096c58d9510e7_Mercedes-q3jy3cwrrt4ishsbt0og9t62jmrni2xlinyzskvzo4.avif",
+   "type": "image/avif",
+   "resourceType": "image",
+   "size": 55015,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/css/twistboxes.webflow.shared.a1931d60f.css",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/css/twistboxes.webflow.shared.a1931d60f.css",
+   "type": "text/css",
+   "resourceType": "stylesheet",
+   "size": 99366,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ],
+   "role": "third-party"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/js/webflow.10fea1e7.2160e09952a653d2.js",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/js/webflow.10fea1e7.2160e09952a653d2.js",
+   "type": "text/javascript",
+   "resourceType": "script",
+   "size": 4894,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ],
+   "library": {
+    "name": "webflow",
+    "version": null
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/js/webflow.schunk.36b8fb49256177c8.js",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/js/webflow.schunk.36b8fb49256177c8.js",
+   "type": "text/javascript",
+   "resourceType": "script",
+   "size": 41429,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ],
+   "library": {
+    "name": "webflow",
+    "version": null
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485432f78191cff58dba/js/webflow.schunk.c85f16f5e628bf57.js",
+   "file": "assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/js/webflow.schunk.c85f16f5e628bf57.js",
+   "type": "text/javascript",
+   "resourceType": "script",
+   "size": 201624,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ],
+   "library": {
+    "name": "webflow",
+    "version": null
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485532f78191cff58e1c/67dc08b1a0a6f8d59f5a8156_probild.jpg",
+   "file": "assets/cdn.prod.website-files.com/67cc485532f78191cff58e1c/67dc08b1a0a6f8d59f5a8156_probild.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 138382,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485532f78191cff58e1c/67dc0b1f49ff6165996df3c3_probild3.jpg",
+   "file": "assets/cdn.prod.website-files.com/67cc485532f78191cff58e1c/67dc0b1f49ff6165996df3c3_probild3.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 126376,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67cc485532f78191cff58e1c/67dc2e48ec3a541d0fd4f07d_probild2.jpg",
+   "file": "assets/cdn.prod.website-files.com/67cc485532f78191cff58e1c/67dc2e48ec3a541d0fd4f07d_probild2.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 57603,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67cc485432f78191cff58dba",
+   "file": "assets/d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8__q82d78bcf.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 89476,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop"
+   ],
+   "library": {
+    "name": "jquery",
+    "version": "3.5.1"
+   },
+   "role": "library"
+  }
+ ]
+}
