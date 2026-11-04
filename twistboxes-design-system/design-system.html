@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twistboxes — Design System Catalog</title>
+  
+  <!-- Reutilização das folhas de estilo e fontes originais do Twistboxes -->
+  <link href="assets/overview/assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/css/twistboxes.webflow.shared.a1931d60f.css" rel="stylesheet" type="text/css">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Barra Superior do Catálogo do Design System */
+    .ds-shell {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .ds-header {
+      flex: 0 0 auto;
+      height: 72px;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 1000;
+    }
+
+    .ds-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .ds-brand img {
+      height: 24px;
+      width: auto;
+      filter: invert(1);
+    }
+
+    .ds-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: #eaeaea;
+    }
+
+    /* Alternador de Vistas: Overview | Components */
+    .ds-nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ds-tab {
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    .ds-tab.active {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    .ds-tab:hover:not(.active) {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Área de Conteúdo */
+    .ds-viewport {
+      flex: 1 1 auto;
+      width: 100%;
+      height: calc(100vh - 72px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* View 1: Overview Iframe */
+    .ds-view-overview {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .ds-view-overview.hidden {
+      display: none;
+    }
+    .ds-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: #000;
+    }
+
+    /* View 2: Components Catalog */
+    .ds-view-components {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+    .ds-view-components.hidden {
+      display: none;
+    }
+
+    /* Fundo ativo animado do Overview herdado */
+    .ds-comp-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(35, 35, 35, 0.8) 0%, rgba(0, 0, 0, 0.98) 75%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Sidebar esquerda fixa (apenas nomes de grupos) */
+    .ds-sidebar {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(12, 12, 12, 0.7);
+      backdrop-filter: blur(20px);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 32px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ds-nav-group-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.4);
+      margin: 16px 0 8px 12px;
+    }
+    .ds-nav-group-title:first-child {
+      margin-top: 0;
+    }
+
+    .ds-sidebar-link {
+      display: block;
+      padding: 9px 14px;
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .ds-sidebar-link:hover,
+    .ds-sidebar-link.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Área Principal de Componentes e Fundamentos */
+    .ds-main-content {
+      position: relative;
+      z-index: 2;
+      flex: 1 1 auto;
+      height: 100%;
+      overflow-y: auto;
+      padding: 48px 56px 96px;
+      scroll-behavior: smooth;
+    }
+
+    .ds-section {
+      margin-bottom: 72px;
+    }
+    .ds-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 12px;
+    }
+    .ds-section-desc {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 28px;
+    }
+
+    /* Linhas de Tipografia */
+    .ds-type-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 180px;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .ds-type-meta {
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.4;
+    }
+    .ds-type-meta strong {
+      display: block;
+      color: #fff;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+    .ds-type-specimen {
+      color: #fff;
+    }
+    .ds-type-size {
+      text-align: right;
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Swatches de Cores */
+    .ds-color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .ds-color-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ds-color-swatch {
+      width: 100%;
+      height: 64px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .ds-color-info strong {
+      display: block;
+      font-size: 0.92rem;
+      color: #fff;
+    }
+    .ds-color-info span {
+      display: block;
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+    }
+    .ds-color-info small {
+      display: block;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 6px;
+    }
+
+    /* Grid de Ícones */
+    .ds-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .ds-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      text-align: center;
+      gap: 12px;
+    }
+    .ds-icon-item svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      color: #fff;
+    }
+    .ds-icon-label {
+      font-size: 0.76rem;
+      font-family: monospace;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Superfícies & Backgrounds */
+    .ds-specimen-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    .ds-specimen-meta {
+      font-family: monospace;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Reutilização e isolamento de componentes originais Webflow */
+    .specimen-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ds-shell">
+    <header class="ds-header">
+      <div class="ds-brand">
+        <img src="assets/overview/assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2ad4c4fbe0c9d1bf75342_Twistboxes_Logo_Black.svg" alt="Twistboxes Logo">
+        <span class="ds-badge">Design System Catalog</span>
+      </div>
+
+      <nav class="ds-nav-tabs" aria-label="Design System Navigation">
+        <a href="#overview" class="ds-tab" id="tab-overview">Overview</a>
+        <a href="#components" class="ds-tab active" id="tab-components">Components</a>
+      </nav>
+    </header>
+
+    <main class="ds-viewport">
+      <!-- VISTA 1: OVERVIEW -->
+      <div class="ds-view-overview hidden" id="view-overview">
+        <iframe class="ds-frame" id="ds-frame" src="assets/overview/index.html" title="Twistboxes Overview Live Preview"></iframe>
+      </div>
+
+      <!-- VISTA 2: COMPONENTS -->
+      <div class="ds-view-components" id="view-components">
+        <div class="ds-comp-bg"></div>
+
+        <!-- Sidebar Esquerda Fixa -->
+        <aside class="ds-sidebar">
+          <div class="ds-nav-group-title">Foundations</div>
+          <a href="#foundations-typography" class="ds-sidebar-link active">Typography</a>
+          <a href="#foundations-colors" class="ds-sidebar-link">Colors</a>
+          <a href="#foundations-backgrounds" class="ds-sidebar-link">Backgrounds</a>
+          <a href="#foundations-surfaces" class="ds-sidebar-link">Surfaces</a>
+          <a href="#foundations-icons" class="ds-sidebar-link">Icons</a>
+
+          <div class="ds-nav-group-title">Components</div>
+          <a href="#comp-navigation" class="ds-sidebar-link">Navigation Bar</a>
+          <a href="#comp-actions" class="ds-sidebar-link">Buttons & Tags</a>
+          <a href="#comp-cards" class="ds-sidebar-link">Cards & Layouts</a>
+          <a href="#comp-footer" class="ds-sidebar-link">Footer Components</a>
+        </aside>
+
+        <!-- Conteúdo Principal dos Componentes -->
+        <div class="ds-main-content">
+          
+          <!-- 1. TYPOGRAPHY -->
+          <section class="ds-section" id="foundations-typography">
+            <h2 class="ds-section-title">Typography</h2>
+            <div class="ds-section-desc">Padrões tipográficos e papéis observados no Overview, organizados da maior hierarquia para a menor.</div>
+
+            <div class="ds-type-row">
+              <div class="ds-type-meta">
+                <strong>Display / Hero Heading</strong>
+                Webflow Inter, weight: 700 / 300
+              </div>
+              <div class="ds-type-specimen">
+                <span class="heading-2" style="font-size: 2.8rem; line-height: 1.1; margin:0; display:block;">Twistboxes <span style="font-weight:300;">Design System</span></span>
+              </div>
+              <div class="ds-type-size">clamp(2.5rem, 6vw, 5rem)</div>
+            </div>
+
+            <div class="ds-type-row">
+              <div class="ds-type-meta">
+                <strong>Heading 3</strong>
+                Webflow Inter, weight: 300
+              </div>
+              <div class="ds-type-specimen">
+                <span class="heading-3" style="font-size: 1.8rem; margin:0; display:block;">A unified visual language for modern products.</span>
+              </div>
+              <div class="ds-type-size">2rem | 1.6rem</div>
+            </div>
+
+            <div class="ds-type-row">
+              <div class="ds-type-meta">
+                <strong>Heading 7 / Card Title</strong>
+                Webflow Inter, weight: 700
+              </div>
+              <div class="ds-type-specimen">
+                <span class="heading-7" style="font-size: 1.4rem; margin:0; display:block;">Modular Architecture</span>
+              </div>
+              <div class="ds-type-size">1.5rem | 1.3rem</div>
+            </div>
+
+            <div class="ds-type-row">
+              <div class="ds-type-meta">
+                <strong>Body / Regular Text</strong>
+                Webflow Inter, weight: 400
+              </div>
+              <div class="ds-type-specimen">
+                <p style="font-size: 1rem; color: rgba(255,255,255,0.75); margin: 0; max-width: 650px;">
+                  Engineered with precise aerodynamic tolerances and tactile materials structured for high-performance responsive interfaces.
+                </p>
+              </div>
+              <div class="ds-type-size">1rem (16px)</div>
+            </div>
+
+            <div class="ds-type-row">
+              <div class="ds-type-meta">
+                <strong>Meta / Tag Text</strong>
+                Webflow Inter, weight: 700
+              </div>
+              <div class="ds-type-specimen">
+                <span class="text-size-small text-weight-bold" style="font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase;">Twistboxes DS — Gen3</span>
+              </div>
+              <div class="ds-type-size">0.82rem (13px)</div>
+            </div>
+          </section>
+
+          <!-- 2. COLORS -->
+          <section class="ds-section" id="foundations-colors">
+            <h2 class="ds-section-title">Colors</h2>
+            <div class="ds-section-desc">Paleta cromática observada por função e superfícies aplicadas.</div>
+
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background: #000000;"></div>
+                <div class="ds-color-info">
+                  <strong>Deep Background</strong>
+                  <span>#000000</span>
+                  <small>Fundo base de contraste máximo da interface.</small>
+                </div>
+              </div>
+
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background: #ffffff;"></div>
+                <div class="ds-color-info">
+                  <strong>Pure White / Primary Text</strong>
+                  <span>#ffffff</span>
+                  <small>Tipografia de alta legibilidade, contrastes e destaques.</small>
+                </div>
+              </div>
+
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px);"></div>
+                <div class="ds-color-info">
+                  <strong>Glass Surface</strong>
+                  <span>rgba(255, 255, 255, 0.08)</span>
+                  <small>Cards, tags de navegação e botões em vidro fosco.</small>
+                </div>
+              </div>
+
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background: rgba(255, 255, 255, 0.18);"></div>
+                <div class="ds-color-info">
+                  <strong>Subtle Border</strong>
+                  <span>rgba(255, 255, 255, 0.18)</span>
+                  <small>Divisores, contornos e linhas de estrutura.</small>
+                </div>
+              </div>
+
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background: rgba(255, 255, 255, 0.6);"></div>
+                <div class="ds-color-info">
+                  <strong>Muted Text</strong>
+                  <span>rgba(255, 255, 255, 0.6)</span>
+                  <small>Legendas, descrições secundárias e estados desativados.</small>
+                </div>
+              </div>
+
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background: #141414;"></div>
+                <div class="ds-color-info">
+                  <strong>Card Container Dark</strong>
+                  <span>#141414</span>
+                  <small>Blocos de layout secundários no footer e seções.</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. BACKGROUNDS -->
+          <section class="ds-section" id="foundations-backgrounds">
+            <h2 class="ds-section-title">Backgrounds</h2>
+            <div class="ds-section-desc">Fundos e gradientes atmosféricos com estética automotiva nórdica.</div>
+
+            <div class="ds-specimen-card" style="min-height: 220px; background: radial-gradient(circle at 50% 30%, #2b2b2b 0%, #000000 85%); display: flex; align-items: center; justify-content: center;">
+              <span style="font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); text-transform: uppercase; font-size: 0.9rem;">
+                Hero Stage Radial Lighting Effect
+              </span>
+            </div>
+            <div class="ds-specimen-meta">Selector: .hero-wrapper | background: radial-gradient(circle at 50% 30%, #2b2b2b 0%, #000000 85%)</div>
+          </section>
+
+          <!-- 4. SURFACES -->
+          <section class="ds-section" id="foundations-surfaces">
+            <h2 class="ds-section-title">Surfaces & Blur</h2>
+            <div class="ds-section-desc">Tratamentos de superfície, efeitos de desfoque e elevação translúcida.</div>
+
+            <div class="specimen-wrap">
+              <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(14px); padding: 24px 32px; border-radius: 20px; width: 340px;">
+                <h4 style="margin: 0 0 8px; color: #fff;">Glass Surface Specimen</h4>
+                <p style="margin: 0; font-size: 0.88rem; color: rgba(255,255,255,0.7);">Superfície translúcida com desfoque de fundo (backdrop-filter) e borda de luz reflexiva.</p>
+              </div>
+
+              <div style="background: #111; border: 1px solid rgba(255, 255, 255, 0.08); padding: 24px 32px; border-radius: 20px; width: 340px;">
+                <h4 style="margin: 0 0 8px; color: #fff;">Solid Dark Surface</h4>
+                <p style="margin: 0; font-size: 0.88rem; color: rgba(255,255,255,0.7);">Superfície opaca de suporte para contraste com peças de produto e fotografias de alto alcance.</p>
+              </div>
+            </div>
+            <div class="ds-specimen-meta">Classes: .read-more-tag, .overlay-navbar, .div-block-6</div>
+          </section>
+
+          <!-- 5. ICONS -->
+          <section class="ds-section" id="foundations-icons">
+            <h2 class="ds-section-title">Icons</h2>
+            <div class="ds-section-desc">Ícones vetoriais SVG e glifos funcionais extraídos diretamente do projeto.</div>
+
+            <div class="ds-icon-grid">
+              <div class="ds-icon-item">
+                <svg viewBox="0 0 24 24"><path d="M8 7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V9.414l-8.293 8.293a1 1 0 0 1-1.414-1.414L14.586 8H9a1 1 0 0 1-1-1z"/></svg>
+                <span class="ds-icon-label">.svg-icon-copy (Arrow Up-Right)</span>
+              </div>
+
+              <div class="ds-icon-item">
+                <svg viewBox="0 0 24 24"><path d="M4.142 4L6.01 16.136A1.002 1.002 0 0 0 7.016 17H18a1 1 0 0 0 .958-.713l3-10A1 1 0 0 0 21 5H6.32l-.33-2.138a.993.993 0 0 0-.346-.627.997.997 0 0 0-.66-.235H3a1 1 0 1 0 0 2h1.142zm3.716 11l-1.23-8h13.028l-2.4 8H7.858zM10 20a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
+                <span class="ds-icon-label">.cart (Shopping Cart)</span>
+              </div>
+
+              <div class="ds-icon-item">
+                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                <span class="ds-icon-label">.arrow (Forward Indicator)</span>
+              </div>
+
+              <div class="ds-icon-item">
+                <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                <span class="ds-icon-label">.menu-icon (Hamburger)</span>
+              </div>
+
+              <div class="ds-icon-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                <span class="ds-icon-label">.play-action</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 6. COMPLETE COMPONENTS: NAVIGATION -->
+          <section class="ds-section" id="comp-navigation">
+            <h2 class="ds-section-title">Navigation Components</h2>
+            <div class="ds-section-desc">Barra de navegação Webflow com estrutura responsiva, links e logo.</div>
+
+            <div class="ds-specimen-card" style="padding: 32px 24px; background: rgba(255,255,255,0.02); overflow: visible;">
+              <!-- Reutilização exata da estrutura Webflow da Navbar Twistboxes sem colapso de altura -->
+              <div style="position: relative; width: 100%; display: flex; justify-content: center;">
+                <div class="navbar-component" style="margin-top: 0; width: 100%; max-width: 1000px; display: flex; align-items: center; justify-content: space-between; background: rgba(18, 18, 18, 0.85); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 999px; padding: 10px 28px; backdrop-filter: blur(16px);">
+                  <a href="#" class="brand w-nav-brand" style="display: flex; align-items: center; text-decoration: none; max-width: none;">
+                    <img src="assets/overview/assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67d2ad4c4fbe0c9d1bf75342_Twistboxes_Logo_Black.svg" alt="Twistboxes" style="height: 20px; width: auto; filter: invert(1); display: block;">
+                  </a>
+                  
+                  <nav role="navigation" class="nav-menu w-nav-menu" style="position: static; display: flex; align-items: center; gap: 24px; background: transparent; border: none; padding: 0;">
+                    <a href="#" class="nav-link w-inline-block" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 0;"><div>About</div></a>
+                    <a href="#" class="nav-link w-inline-block" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 0;"><div>Products</div></a>
+                    <a href="#" class="nav-link w-inline-block" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 0;"><div>Become a Reseller</div></a>
+                    <a href="#" class="nav-link rent w-inline-block" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 0; display: inline-flex; align-items: center; gap: 6px;">
+                      <div>Rent</div>
+                      <svg viewBox="0 0 24 24" fill="none" style="width: 14px; height: 14px;"><path d="M8 7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8a1 1 0 1 1-2 0V9.414l-8.293 8.293a1 1 0 0 1-1.414-1.414L14.586 8H9a1 1 0 0 1-1-1z" fill="currentColor"></path></svg>
+                    </a>
+                    <a href="#" class="nav-link w-inline-block" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 0;"><div>Contact</div></a>
+                    <a href="#" class="nav-link-copy w-inline-block" style="display: inline-flex; align-items: center; color: #fff; padding-left: 8px;">
+                      <svg viewBox="0 0 24 24" fill="none" style="width: 18px; height: 18px;"><path d="M4.142 4L6.01 16.136A1.002 1.002 0 0 0 7.016 17H18a1 1 0 0 0 .958-.713l3-10A1 1 0 0 0 21 5H6.32l-.33-2.138a.993.993 0 0 0-.346-.627.997.997 0 0 0-.66-.235H3a1 1 0 1 0 0 2h1.142zm3.716 11l-1.23-8h13.028l-2.4 8H7.858zM10 20a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" fill="currentColor"></path></svg>
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="ds-specimen-meta">Classes: .navbar-component | .nav-menu | .nav-link | .logo-navbar</div>
+          </section>
+
+          <!-- 7. COMPLETE COMPONENTS: ACTIONS & TAGS -->
+          <section class="ds-section" id="comp-actions">
+            <h2 class="ds-section-title">Actions & Interactive Tags</h2>
+            <div class="ds-section-desc">Pílulas de ação, botões de compra e gatilhos de interação com micro-interações.</div>
+
+            <div class="specimen-wrap">
+              <!-- Reutilização da pílula original .read-more-tag -->
+              <div class="read-more-tag" style="opacity: 1; transform: none; display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 999px;">
+                <div class="text-size-small text-weight-bold" style="font-weight: 700; font-size: 0.85rem;">Twistboxes Gen3</div>
+                <div class="vertical-line-tag" style="width: 1px; height: 14px; background: rgba(255,255,255,0.3);"></div>
+                <div class="read-more-button" style="display: flex; align-items: center; gap: 6px;">
+                  <span style="font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.7);">Buy now</span>
+                  <img src="assets/overview/assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e93_Arrow.svg" style="width: 12px; height: 12px; filter: invert(1);" alt="Arrow">
+                </div>
+              </div>
+
+              <!-- Pílula de Ação Secundária / Hover State -->
+              <div class="read-more-tag" style="opacity: 1; transform: none; display: inline-flex; align-items: center; gap: 12px; background: #fff; color: #000; padding: 8px 18px; border-radius: 999px;">
+                <div class="text-size-small text-weight-bold" style="font-weight: 700; font-size: 0.85rem; color: #000;">Explore Specs</div>
+                <div class="vertical-line-tag" style="width: 1px; height: 14px; background: rgba(0,0,0,0.2);"></div>
+                <div class="read-more-button" style="display: flex; align-items: center; gap: 6px;">
+                  <span style="font-size: 0.85rem; font-weight: 600; color: #000;">Details</span>
+                  <img src="assets/overview/assets/cdn.prod.website-files.com/67cc485432f78191cff58dba/67cc485532f78191cff58e93_Arrow.svg" style="width: 12px; height: 12px;" alt="Arrow">
+                </div>
+              </div>
+            </div>
+            <div class="ds-specimen-meta">Class: .read-more-tag | .read-more-button | .vertical-line-tag</div>
+          </section>
+
+          <!-- 8. COMPLETE COMPONENTS: CARDS & LAYOUTS -->
+          <section class="ds-section" id="comp-cards">
+            <h2 class="ds-section-title">Cards & Containers</h2>
+            <div class="ds-section-desc">Módulos de destaque técnico com tipografia integrada e fundos texturizados.</div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+              <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 32px 24px; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-end;">
+                <h3 style="font-size: 1.3rem; margin: 0 0 6px; font-weight: 700;">Modular Architecture</h3>
+                <p style="margin: 0; font-size: 0.88rem; color: rgba(255,255,255,0.65);">Custom engineered for your car with precision aerodynamic fit.</p>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 32px 24px; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-end;">
+                <h3 style="font-size: 1.3rem; margin: 0 0 6px; font-weight: 700;">Smart Storage</h3>
+                <p style="margin: 0; font-size: 0.88rem; color: rgba(255,255,255,0.65);">Store it anywhere with compact folding capabilities.</p>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; padding: 32px 24px; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-end;">
+                <h3 style="font-size: 1.3rem; margin: 0 0 6px; font-weight: 700;">Safety First</h3>
+                <p style="margin: 0; font-size: 0.88rem; color: rgba(255,255,255,0.65);">Probably the safest roof box design on the market.</p>
+              </div>
+            </div>
+            <div class="ds-specimen-meta">Classes: .div-block-6 | .heading-7 | .heading-8 | .heading-9</div>
+          </section>
+
+          <!-- 9. COMPLETE COMPONENTS: FOOTER -->
+          <section class="ds-section" id="comp-footer">
+            <h2 class="ds-section-title">Footer Components</h2>
+            <div class="ds-section-desc">Grid hierárquico de rodapé com navegação institucional e social embed.</div>
+
+            <div class="ds-specimen-card" style="padding: 32px;">
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 28px; margin-bottom: 24px;">
+                <div>
+                  <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: 12px;">Explore</div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                    <span>Home</span>
+                    <span>Products</span>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: 12px;">Support</div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                    <span>Become a Reseller</span>
+                    <span>Rent a Twistbox</span>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); margin-bottom: 12px;">Others</div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+                    <span>Contact Us</span>
+                    <span>News</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">© Twistboxes. All rights reserved.</span>
+                <span style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">Designed with precision</span>
+              </div>
+            </div>
+            <div class="ds-specimen-meta">Classes: .footer-grid | .footer-grid-wrap | .footer-links-wrapper</div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Gerenciador de Alternância de Abas Overview | Components
+    const tabOverview = document.getElementById('tab-overview');
+    const tabComponents = document.getElementById('tab-components');
+    const viewOverview = document.getElementById('view-overview');
+    const viewComponents = document.getElementById('view-components');
+
+    function syncRoute() {
+      const hash = window.location.hash || '#components';
+      if (hash === '#overview') {
+        tabOverview.classList.add('active');
+        tabComponents.classList.remove('active');
+        viewOverview.classList.remove('hidden');
+        viewComponents.classList.add('hidden');
+      } else {
+        tabComponents.classList.add('active');
+        tabOverview.classList.remove('active');
+        viewComponents.classList.remove('hidden');
+        viewOverview.classList.add('hidden');
+      }
+    }
+
+    tabOverview.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.hash = '#overview';
+      syncRoute();
+    });
+
+    tabComponents.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.hash = '#components';
+      syncRoute();
+    });
+
+    window.addEventListener('hashchange', syncRoute);
+    syncRoute();
+
+    // Destaque ativo dos links da sidebar de componentes com scroll
+    const sidebarLinks = document.querySelectorAll('.ds-sidebar-link');
+    const sections = document.querySelectorAll('.ds-section');
+    const contentArea = document.querySelector('.ds-main-content');
+
+    contentArea.addEventListener('scroll', () => {
+      let currentId = '';
+      sections.forEach(sec => {
+        const top = sec.offsetTop - contentArea.offsetTop;
+        if (contentArea.scrollTop >= top - 80) {
+          currentId = sec.getAttribute('id');
+        }
+      });
+      if (currentId) {
+        sidebarLinks.forEach(link => {
+          if (link.getAttribute('href') === '#' + currentId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
