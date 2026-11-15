@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Animações de Entrada ao Rolar (Scroll Reveal com IntersectionObserver)
   const revealElements = document.querySelectorAll(
-    '.audience-card, .service-card, .service-card-visual, .process-node, .about-grid > div, .contact-panel, .contact-form, .split-band .container, .trust-item'
+    '.audience-card, .service-card, .service-card-visual, .corp-card, .process-node, .about-grid > div, .contact-panel, .contact-form, .split-band .container, .trust-item'
   );
 
   revealElements.forEach((el) => {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
   // 3. Efeito Tilt 3D Holográfico em Cards Interativos
-  const interactiveCards = document.querySelectorAll('.audience-card, .service-card-visual, .hero-chip');
+  const interactiveCards = document.querySelectorAll('.audience-card, .service-card-visual, .corp-card, .hero-chip');
   
   interactiveCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {

@@ -1828,3 +1828,202 @@ h1 em{
     margin-bottom: 12px;
   }
 }
+
+/* ==========================================================================
+   CARDS INTERATIVOS PREMIUM B2B â€” FRENTE PRINCIPAL & FUNDAÃ‡ÃƒO TECNOLÃ“GICA (UX)
+   ========================================================================== */
+
+/* Sub-navegador de Ã¢ncoras corporativas estilo Pill Nav secundÃ¡rio */
+.corporate-subnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  margin: -30px auto 40px;
+  background: rgba(11, 26, 48, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--pill-radius);
+  max-width: 820px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+.corporate-subnav a {
+  padding: 8px 18px;
+  border-radius: var(--pill-radius);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #c7d7eb;
+  transition: all 0.25s var(--ease-spring);
+  border: 1px solid transparent;
+}
+
+.corporate-subnav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.corporate-subnav a.active {
+  background: var(--red);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(200, 32, 43, 0.4);
+}
+
+/* Novo Card Corporativo com Micro-InteraÃ§Ãµes CinÃ©ticas */
+.corp-card {
+  position: relative;
+  background: rgba(11, 26, 48, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s var(--ease-spring), border-color 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Brilho radial de fundo no hover */
+.corp-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(21, 59, 112, 0.35) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Linha superior de destaque neon no hover */
+.corp-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-spring);
+}
+
+.corp-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55), 0 0 30px rgba(21, 59, 112, 0.4);
+}
+
+.corp-card:hover::before {
+  opacity: 1;
+}
+
+.corp-card:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.corp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.corp-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(21, 59, 112, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s var(--ease-spring);
+}
+
+.corp-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.corp-card:hover .corp-icon {
+  background: var(--red);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(200, 32, 43, 0.65);
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.corp-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8ea3bf;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--pill-radius);
+  transition: all 0.3s ease;
+}
+
+.corp-card:hover .corp-badge {
+  color: #ffffff;
+  background: rgba(200, 32, 43, 0.2);
+  border-color: rgba(200, 32, 43, 0.4);
+}
+
+.corp-card h3 {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.corp-card p {
+  font-size: 0.92rem;
+  color: #b0c4de;
+  line-height: 1.55;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.corp-card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.corp-tag {
+  font-size: 0.74rem;
+  color: #92a8c3;
+  font-weight: 600;
+}
+
+.corp-tag::before {
+  content: "â€¢";
+  color: var(--red);
+  margin-right: 4px;
+}
