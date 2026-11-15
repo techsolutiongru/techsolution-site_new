@@ -1,6 +1,5 @@
 // ==========================================================================
-// TECHSOLUTION — Interações Cinéticas, Animações e Comportamento
-// Inspirado nas animações modernas do Twistboxes com identidade TECHSOLUTION
+// TECHSOLUTION — Interações Cinéticas, Animações e Comportamento (V2)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,17 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Animações de Entrada ao Rolar (Scroll Reveal com IntersectionObserver)
   const revealElements = document.querySelectorAll(
-    '.audience-card, .service-card, .process-step, .about-grid > div, .contact-panel, .contact-form, .split-band .container, .trust-item'
+    '.audience-card, .service-card, .service-card-visual, .process-node, .about-grid > div, .contact-panel, .contact-form, .split-band .container, .trust-item'
   );
 
-  revealElements.forEach((el, index) => {
+  revealElements.forEach((el) => {
     el.classList.add('reveal-on-scroll');
   });
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.12
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -60,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 3. Efeito Tilt 3D Holográfico em Cards (Estilo Twistboxes interativo)
-  const interactiveCards = document.querySelectorAll('.audience-card, .service-card, .hero-chip');
+  // 3. Efeito Tilt 3D Holográfico em Cards Interativos
+  const interactiveCards = document.querySelectorAll('.audience-card, .service-card-visual, .hero-chip');
   
   interactiveCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -71,14 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       
-      const rotateX = ((y - centerY) / centerY) * -5;
-      const rotateY = ((x - centerX) / centerX) * 5;
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-      
-      // Reflexo de luz dinâmico na borda
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-6px)`;
     });
 
     card.addEventListener('mouseleave', () => {
@@ -87,19 +82,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 4. Efeito de Scroll na Barra de Navegação (Blur & Shrink suave)
-  const header = document.querySelector('.site-header');
   const navWrap = document.querySelector('.nav-wrap');
-  
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navWrap.classList.add('scrolled');
-    } else {
-      navWrap.classList.remove('scrolled');
-    }
-  }, { passive: true });
+  if (navWrap) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navWrap.classList.add('scrolled');
+      } else {
+        navWrap.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
 
-  // 5. Tratamento de Formulário Seguro & Redirecionamento WhatsApp
+  // 5. Formulários: Validação em Tempo Real e Barra de Progresso
   document.querySelectorAll('[data-whatsapp-form]').forEach(form => {
+    const inputs = form.querySelectorAll('input[required], select[required]');
+    const progressFill = form.querySelector('#form-progress-fill');
+    const progressText = form.querySelector('#form-progress-text');
+    const totalRequired = inputs.length;
+
+    function updateProgress() {
+      let filledCount = 0;
+      inputs.forEach(input => {
+        if (input.value.trim() !== '') {
+          filledCount++;
+          input.classList.add('valid');
+        } else {
+          input.classList.remove('valid');
+        }
+      });
+
+      if (progressFill && progressText) {
+        const percent = Math.round((filledCount / totalRequired) * 100);
+        progressFill.style.width = `${percent}%`;
+        progressText.textContent = `${filledCount} de ${totalRequired} campos obrigatórios`;
+      }
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('input', updateProgress);
+      input.addEventListener('change', updateProgress);
+    });
+
+    // Submissão do formulário
     form.addEventListener('submit', event => {
       event.preventDefault();
 
@@ -123,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const mensagem = (data.get('mensagem') || '').toString().trim();
 
       const linhas = [
-        'Olá! Gostaria de falar com a TECHSOLUTION.',
+        'Olá! Gostaria de falar com a equipe TECHSOLUTION.',
         '',
         `*Nome:* ${nome}`,
         empresa ? `*Empresa:* ${empresa}` : null,
@@ -135,7 +159,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const messageText = linhas.join('\n');
       const whatsappUrl = `https://wa.me/5511971946176?text=${encodeURIComponent(messageText)}`;
 
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        // Fallback caso pop-up seja bloqueado
+        window.location.href = whatsappUrl;
+      }
     });
   });
 

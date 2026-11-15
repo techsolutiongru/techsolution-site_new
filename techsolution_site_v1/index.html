@@ -19,7 +19,7 @@
   <meta property="og:image" content="https://techsolution.com.br/assets/hero-datacenter.png">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="assets/logo-simbolo.png">
+  <link rel="icon" type="image/png" href="assets/logo-simbolo-transparente.png">
 
   <!-- Pré-conexão e Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "TECHSOLUTION",
-    "image": "https://techsolution.com.br/assets/logo-techsolution.png",
+    "image": "https://techsolution.com.br/assets/logo-techsolution-transparente.png",
     "telephone": "+55-11-97194-6176",
     "email": "atendimento.techsolution@gmail.com",
     "address": {
@@ -76,8 +76,8 @@
   <div class="container nav-wrap">
     <a class="brand" href="index.html" aria-label="TECHSOLUTION início">
       <picture>
-        <source srcset="assets/logo-simbolo.webp" type="image/webp">
-        <img src="assets/logo-simbolo.png" alt="Símbolo oficial da TECHSOLUTION" width="52" height="54">
+        <source srcset="assets/logo-simbolo-transparente.webp" type="image/webp">
+        <img src="assets/logo-simbolo-transparente.png" alt="Símbolo oficial da TECHSOLUTION" width="52" height="54">
       </picture>
       <span class="brand-copy">
         <b><i>TECH</i> SOLUTION</b>
@@ -242,56 +242,116 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section">
+  <!-- SERVIÇOS (CARDS VISUAIS V2) -->
+  <section class="section" id="servicos">
     <div class="container">
       <div class="section-head center">
         <div class="kicker">Nossas soluções</div>
         <h2>Tecnologia com escopo claro e foco em resultados.</h2>
-        <p>Uma oferta de serviços desenhada para atender demandas empresariais e necessidades pontuais com clareza e previsibilidade.</p>
+        <p>Soluções estruturadas para atender demandas corporativas e necessidades técnicas com previsibilidade e excelência.</p>
       </div>
 
       <div class="service-grid">
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">▥</div>
-          <h3>Consultoria e Gestão de TI</h3>
-          <p>Diagnóstico de ambiente, planejamento estratégico, organização de prioridades e coordenação de fornecedores.</p>
-          <a class="text-link" href="empresas.html#consultoria">Saiba mais <span aria-hidden="true">→</span></a>
+        <!-- 1. Consultoria e Gestão de TI -->
+        <article class="service-card-visual">
+          <picture>
+            <source srcset="assets/servico-consultoria.webp" type="image/webp">
+            <img class="service-card-bg" src="assets/servico-consultoria.jpg" alt="Consultores e gestores reunidos discutindo indicadores de tecnologia" loading="lazy" width="600" height="400">
+          </picture>
+          <div class="service-card-overlay" aria-hidden="true"></div>
+          <div class="service-card-body">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <h3>Consultoria e Gestão de TI</h3>
+            <p>Diagnóstico de ambiente, planejamento estratégico, governança e coordenação de fornecedores.</p>
+            <a class="service-card-link" href="empresas.html#consultoria">Conhecer consultoria <span aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">▤</div>
-          <h3>Projetos e Implantação</h3>
-          <p>Estruturação de demandas, cronogramas executivos, acompanhamento técnico de entregas e transição para operação.</p>
-          <a class="text-link" href="empresas.html#projetos">Saiba mais <span aria-hidden="true">→</span></a>
+        <!-- 2. Projetos e Implantação -->
+        <article class="service-card-visual">
+          <picture>
+            <source srcset="assets/servico-projetos.webp" type="image/webp">
+            <img class="service-card-bg" src="assets/servico-projetos.jpg" alt="Equipe planejando implantação e cronograma de projetos de tecnologia" loading="lazy" width="600" height="400">
+          </picture>
+          <div class="service-card-overlay" aria-hidden="true"></div>
+          <div class="service-card-body">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3>Projetos e Implantação</h3>
+            <p>Estruturação de demandas, cronogramas executivos e acompanhamento técnico de entregas.</p>
+            <a class="service-card-link" href="empresas.html#projetos">Conhecer projetos <span aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">⌘</div>
-          <h3>Infraestrutura e Redes</h3>
-          <p>Redes corporativas, conectividade cabeada e sem fio, organização física/lógica e documentação técnica.</p>
-          <a class="text-link" href="empresas.html#infraestrutura">Saiba mais <span aria-hidden="true">→</span></a>
+        <!-- 3. Infraestrutura e Redes -->
+        <article class="service-card-visual">
+          <picture>
+            <source srcset="assets/servico-infraestrutura.webp" type="image/webp">
+            <img class="service-card-bg" src="assets/servico-infraestrutura.jpg" alt="Racks de servidores corporativos, conectividade e cabeamento estruturado" loading="lazy" width="600" height="400">
+          </picture>
+          <div class="service-card-overlay" aria-hidden="true"></div>
+          <div class="service-card-body">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <h3>Infraestrutura e Redes</h3>
+            <p>Redes empresariais cabeadas e Wi-Fi, conectividade robusta, organização de racks e documentação técnica.</p>
+            <a class="service-card-link" href="empresas.html#infraestrutura">Conhecer infraestrutura <span aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">⬡</div>
-          <h3>Segurança e Continuidade</h3>
-          <p>Análise de riscos, boas práticas de proteção de acessos, rotinas de backup e planos de contingência de dados.</p>
-          <a class="text-link" href="empresas.html#seguranca">Saiba mais <span aria-hidden="true">→</span></a>
+        <!-- 4. Segurança e Continuidade -->
+        <article class="service-card-visual">
+          <picture>
+            <source srcset="assets/servico-seguranca.webp" type="image/webp">
+            <img class="service-card-bg" src="assets/servico-seguranca.jpg" alt="Painel de segurança da informação e monitoramento de sistemas" loading="lazy" width="600" height="400">
+          </picture>
+          <div class="service-card-overlay" aria-hidden="true"></div>
+          <div class="service-card-body">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Segurança e Continuidade</h3>
+            <p>Análise de riscos, boas práticas de proteção de acessos, rotinas de backup e planos de contingência de dados.</p>
+            <a class="service-card-link" href="empresas.html#seguranca">Conhecer segurança <span aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">⚙</div>
-          <h3>Assistência Técnica Especializada</h3>
-          <p>Diagnóstico de falhas, reparos de hardware, manutenção preventiva e suporte para notebooks, PCs e periféricos.</p>
-          <a class="text-link" href="assistencia.html">Saiba mais <span aria-hidden="true">→</span></a>
+        <!-- 5. Assistência Técnica Especializada -->
+        <article class="service-card-visual">
+          <picture>
+            <source srcset="assets/servico-assistencia.webp" type="image/webp">
+            <img class="service-card-bg" src="assets/servico-assistencia.jpg" alt="Notebook aberto sendo reparado por técnico qualificado em bancada" loading="lazy" width="600" height="400">
+          </picture>
+          <div class="service-card-overlay" aria-hidden="true"></div>
+          <div class="service-card-body">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <h3>Assistência Técnica Especializada</h3>
+            <p>Diagnóstico apurado, manutenção preventiva e reparo de hardware para notebooks, PCs e periféricos.</p>
+            <a class="service-card-link" href="assistencia.html">Conhecer assistência <span aria-hidden="true">→</span></a>
+          </div>
         </article>
 
-        <article class="service-card">
-          <div class="service-icon" aria-hidden="true">▣</div>
-          <h3>Equipamentos e Locação</h3>
-          <p>Venda, fornecimento e locação de computadores, notebooks e impressoras com dimensionamento consciente.</p>
-          <a class="text-link" href="equipamentos.html">Saiba mais <span aria-hidden="true">→</span></a>
+        <!-- 6. Equipamentos e Locação -->
+        <article class="service-card-visual">
+          <picture>
+            <source srcset="assets/servico-equipamentos.webp" type="image/webp">
+            <img class="service-card-bg" src="assets/servico-equipamentos.jpg" alt="Computadores e notebooks corporativos organizados em ambiente profissional" loading="lazy" width="600" height="400">
+          </picture>
+          <div class="service-card-overlay" aria-hidden="true"></div>
+          <div class="service-card-body">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3>Equipamentos e Locação</h3>
+            <p>Venda, fornecimento e locação de computadores e notebooks com dimensionamento consciente para seu negócio.</p>
+            <a class="service-card-link" href="equipamentos.html">Ver equipamentos <span aria-hidden="true">→</span></a>
+          </div>
         </article>
       </div>
     </div>
@@ -308,39 +368,64 @@
     </div>
   </section>
 
-  <!-- METODOLOGIA -->
+  <!-- METODOLOGIA CONECTADA (V2) -->
   <section class="section section-soft">
     <div class="container">
       <div class="section-head center">
         <div class="kicker">Nossa metodologia de trabalho</div>
         <h2>Processo claro em cada etapa.</h2>
-        <p>Um fluxo transparente e estruturado para compreender as dores, propor o caminho viável e garantir a entrega.</p>
+        <p>Um fluxo transparente e estruturado para compreender as necessidades, propor soluções viáveis e garantir a entrega com acompanhamento.</p>
       </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="process-number">1</div>
+
+      <div class="connected-process" aria-label="Etapas da nossa metodologia">
+        <!-- Etapa 1 -->
+        <div class="process-node">
+          <div class="process-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+          </div>
+          <span class="process-step-num">Passo 01</span>
           <h3>Entender</h3>
-          <p>Ouvimos seu cenário, histórico de problemas e metas.</p>
+          <p>Ouvimos seu cenário real, histórico de gargalos e metas do negócio.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">2</div>
+
+        <!-- Etapa 2 -->
+        <div class="process-node">
+          <div class="process-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <span class="process-step-num">Passo 02</span>
           <h3>Diagnosticar</h3>
-          <p>Mapeamos gargalos, riscos e oportunidades reais.</p>
+          <p>Mapeamos vulnerabilidades, riscos e oportunidades reais de melhoria.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">3</div>
+
+        <!-- Etapa 3 -->
+        <div class="process-node">
+          <div class="process-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <span class="process-step-num">Passo 03</span>
           <h3>Planejar</h3>
-          <p>Estruturamos escopo, prazos, prioridades e custos.</p>
+          <p>Estruturamos escopo executivo, prazos, prioridades e custos claros.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">4</div>
+
+        <!-- Etapa 4 -->
+        <div class="process-node">
+          <div class="process-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <span class="process-step-num">Passo 04</span>
           <h3>Executar</h3>
-          <p>Conduzimos as intervenções e coordenamos parceiros.</p>
+          <p>Conduzimos as intervenções e coordenamos parceiros com rigor técnico.</p>
         </div>
-        <div class="process-step">
-          <div class="process-number">5</div>
+
+        <!-- Etapa 5 -->
+        <div class="process-node">
+          <div class="process-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <span class="process-step-num">Passo 05</span>
           <h3>Acompanhar</h3>
-          <p>Monitoramos o desempenho e orientamos a evolução contínua.</p>
+          <p>Monitoramos o desempenho e orientamos a evolução contínua da TI.</p>
         </div>
       </div>
     </div>
@@ -385,21 +470,40 @@
           <p>Envie as informações iniciais para um atendimento ágil e direcionado.</p>
         </div>
 
+        <div class="form-progress-bar">
+          <div class="form-progress-track">
+            <div class="form-progress-fill" id="form-progress-fill"></div>
+          </div>
+          <span class="form-progress-text" id="form-progress-text">0 de 4 campos preenchidos</span>
+        </div>
+
         <div class="form-grid">
           <div class="field">
-            <label for="nome">Seu nome completo *</label>
+            <label for="nome">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Seu nome completo *
+            </label>
             <input id="nome" name="nome" type="text" required placeholder="Ex.: Anderson Alves" autocomplete="name">
           </div>
           <div class="field">
-            <label for="empresa">Empresa (opcional para pessoa física)</label>
+            <label for="empresa">
+              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              Empresa (opcional)
+            </label>
             <input id="empresa" name="empresa" type="text" placeholder="Ex.: Nome da sua empresa" autocomplete="organization">
           </div>
           <div class="field">
-            <label for="telefone">WhatsApp / Telefone com DDD *</label>
+            <label for="telefone">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              WhatsApp / Telefone com DDD *
+            </label>
             <input id="telefone" name="telefone" type="tel" required placeholder="(11) 99999-9999" autocomplete="tel">
           </div>
           <div class="field">
-            <label for="assunto">Assunto do contato *</label>
+            <label for="assunto">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Assunto do contato *
+            </label>
             <select id="assunto" name="assunto" required>
               <option value="">Selecione a opção</option>
               <option value="Consultoria e Gestão de TI Empresarial">Consultoria e Gestão de TI Empresarial</option>
@@ -410,14 +514,20 @@
             </select>
           </div>
           <div class="field full">
-            <label for="mensagem">Descreva brevemente o que você precisa</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Conte detalhes sobre o ambiente da sua empresa ou o sintoma do equipamento..."></textarea>
+            <label for="mensagem">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              Descreva brevemente sua necessidade
+            </label>
+            <textarea id="mensagem" name="mensagem" placeholder="Conte detalhes sobre o ambiente de TI da sua empresa ou o sintoma do seu equipamento..."></textarea>
           </div>
         </div>
 
-        <p class="form-help">Ao clicar em enviar, uma conversa será aberta no aplicativo do WhatsApp com sua mensagem formatada. Este site não armazena nem compartilha seus dados pessoais com terceiros.</p>
+        <p class="form-help">Ao clicar abaixo, sua solicitação será formatada e uma conversa direta será aberta no WhatsApp da TECHSOLUTION para confirmação. O site não armazena dados em banco de dados.</p>
         
-        <button class="btn btn-blue" type="submit">Enviar mensagem pelo WhatsApp →</button>
+        <button class="btn-whatsapp-submit" type="submit">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2C8.28 2 2 8.28 2 16c0 2.73.78 5.29 2.14 7.46L2.05 30.1l6.83-2.04C10.93 29.31 13.39 30 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.56c-2.34 0-4.57-.68-6.48-1.87l-.46-.29-4.32 1.29 1.32-4.19-.3-.48C4.5 19.98 3.82 18.04 3.82 16c0-6.72 5.46-12.18 12.18-12.18s12.18 5.46 12.18 12.18-5.46 12.18-12.18 12.18zm6.94-9.15c-.38-.19-2.26-1.12-2.61-1.25-.35-.13-.6-.19-.85.19-.25.38-.98 1.25-1.2 1.51-.22.25-.45.29-.83.1-.38-.19-1.61-.59-3.07-1.89-1.13-1.01-1.9-2.26-2.12-2.64-.22-.38-.02-.59.17-.78.17-.17.38-.45.57-.67.19-.22.25-.38.38-.63.13-.25.06-.48-.03-.67-.1-.19-.85-2.05-1.17-2.8-.31-.75-.62-.64-.85-.65h-.73c-.25 0-.67.09-1.02.48-.35.38-1.34 1.31-1.34 3.2 0 1.88 1.37 3.7 1.56 3.96.19.25 2.7 4.12 6.54 5.77.91.39 1.62.63 2.18.81.92.29 1.76.25 2.42.15.74-.11 2.26-.92 2.58-1.82.32-.89.32-1.66.22-1.82-.09-.16-.34-.26-.72-.45z"/></svg>
+          Iniciar conversa pelo WhatsApp →
+        </button>
       </form>
     </div>
   </section>
@@ -429,8 +539,8 @@
       <div class="footer-brand">
         <a class="brand" href="index.html" aria-label="TECHSOLUTION início">
           <picture>
-            <source srcset="assets/logo-simbolo.webp" type="image/webp">
-            <img src="assets/logo-simbolo.png" alt="Símbolo oficial da TECHSOLUTION" width="48" height="50">
+            <source srcset="assets/logo-simbolo-transparente.webp" type="image/webp">
+            <img src="assets/logo-simbolo-transparente.png" alt="Símbolo oficial da TECHSOLUTION" width="48" height="50">
           </picture>
           <span class="brand-copy">
             <b><i>TECH</i> SOLUTION</b>
