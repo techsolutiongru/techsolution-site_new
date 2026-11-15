@@ -2023,7 +2023,7 @@ h1 em{
 }
 
 .corp-tag::before {
-  content: "â€¢";
+  content: "\2022";
   color: var(--red);
   margin-right: 4px;
 }
